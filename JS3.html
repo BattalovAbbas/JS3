@@ -1,0 +1,52 @@
+<!DOCTYPE html> 
+<html> 
+    <title>Function</title> 
+    <head> 
+        <meta http-equiv="content-type" content="text/html"; charset="UTF-8" /> 
+        <meta charset="UTF-8" /> 
+        <link type="text/css" rel="stylesheet" href="css.css"/> 
+        <script src="javascript.js"></script>
+    </head> 
+    <body>
+        <div class="form">
+            <b> Text </b>
+            <input id ="inputText"></input> 
+
+            <b>Color</b>
+            <select id ="selectColor">
+                <option>red</option>
+                <option>green</option>
+                <option>blue</option>
+                <option>black</option>
+                <option>yellow</option>
+            </select> 
+            <b>Marker</b>
+            <select id ="selectMarker">
+                <option>disk</option>
+                <option>square</option>
+                <option>circle</option>
+            </select> 
+        </div>
+        <div class="form2">
+            <button id="btnCreate">Create</button> 
+            <button id="btnChange" disabled = true>Change</button> 
+            <button id="btnDelete" disabled = true>Delete</button> 
+        </div>
+        <div class="form3">
+            <ul id="list" class="list">              
+            </ul>
+        </div>
+        <script type="text/javascript">
+            var btnCreate = window.document.getElementById("btnCreate"); 
+            var btnChange = window.document.getElementById("btnChange"); 
+            var btnDelete = window.document.getElementById("btnDelete"); 
+            var ul = document.getElementById('list');
+            btnCreate.onclick = function(){ FuncCreate(document.getElementById("inputText").value,                   
+                                                       document.getElementById("selectColor").value, 
+                                                       document.getElementById("selectMarker").value); };            
+            ul.onclick = function(event) { Select(event); };
+            btnChange.onclick = function() { Change(); };
+            btnDelete.onclick = function() { Delete(); };
+        </script> 
+    </body> 
+</html>
